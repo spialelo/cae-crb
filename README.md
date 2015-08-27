@@ -11,3 +11,6 @@ To find a way to speed up the production of the CAE HTML emails. Ads will have t
 
 #####Status Update
 -------------------
+
+20150826
+Input and display of HTML are working. Will work on the style and a few other tweaks.

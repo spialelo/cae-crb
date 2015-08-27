@@ -4,15 +4,17 @@ var inputSpec = document.getElementById('specialty').value;
 var topic = document.getElementById('topic').value;	
 
 
-var hdrSpec;
-
+var hdrSpec="";
+ 
 
 switch(inputSpec) {
- case 2900: hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_rheu.gif"; document.getElementById("hdrImage").src = "hdrSpec"; break;
+ case 2900: hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_rheu.gif"; 
+ break;
  case 1100:hdrSpec = "http://"; break;
  case 1300:hdrSpec = "http://"; break;
  case 1400: hdrSpec = "http://"; break;
- default: hdrSpec = "http://generic"; break;
+ default: 
+ hdrSpec = "http://generic"; 
 }
 
 
@@ -52,9 +54,11 @@ var et_HTML ="&lt;body bgcolor=\"#ffffff\" topmargin=\"0\" leftmargin=\"0\" marg
 
 var test_HTML;
 
+/*Make the display area expand with the content.*/
+document.getElementById('text_1').style.width = 'auto';
+document.getElementById('text_1').style.height = 'auto';
 
-
-
+/*HTML output will be displayed in the div.*/
 document.getElementById('text_1').innerHTML = et_HTML;
 
 
@@ -67,12 +71,18 @@ document.getElementById('text_1').innerHTML = et_HTML;
 function eraseDiv() {
 
 
-document.getElementById('text_1').innerHTML = "";
+/*Reset the display area to an empty square.*/
+document.getElementById('text_1').innerHTML = " ";
+
+
+/*Reset form values.*/
+document.getElementById('caeOne_form').reset();	
+
+/*Reset the display area size to the original values.*/
+document.getElementById('text_1').style.width = '600px';
+document.getElementById('text_1').style.height = '400px';
 
 };
 
 /*working input and display*/
 
-
-/* "&lt;font style=\"color:#ff0000\"&gt;&lt;a href=\"" + caeURL_1+ "\"&gt;" +caeTITLE_1 + "&lt;\/a&gt;&lt;\/font&gt;&lt;br\/&gt;&lt;font class=\"teaser\" style=\"font-size:14px; color:#666666;\"&gt;" + caeTEASER_1 + "&lt;\/font&gt;";
- */

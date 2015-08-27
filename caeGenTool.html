@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>Messing Around</title>
+	<title>Condition Article Exclusivity Generator v. 1.0</title>
 
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
@@ -12,70 +12,70 @@
 <body>
 
 
-<main style="width:960px; margin: 0 auto; padding-top:25px; overflow: hidden; height:100%;">
+<main class="caeOne">
 	
-	<header style="float:left; clear: both;">
+	<header class="caeOne_header" style="">
 		Condition Article Exclusivity
 	</header>
 
+<form id="caeOne_form">
+	<section style="float:left; clear: both; height:100%; padding-top:20px;">
+		
+		<div style="float: left; clear: both; margin-right:10px;">Enter Parent/Child Spec number</div> <input type="text" id="specialty" placeholder="SPECIALTY" autocomplete="off"/> 
 
-	<section style="float:left; clear: both; height:100%;">
-		section...copy. lorem ipsum.<br><br>
-		<input type="text" id="specialty" style="float:left; clear: both;" value="SPECIALTY" /><br><span>Enter Parent/Child Spec number</span>
+		<div style="float: left; clear: both; margin-right:10px;">Enter Concept Name</div> <input type="text" id="topic" style="float:left;" placeholder="TOPIC" autocomplete="off" />
 
-		<input type="text" id="topic" style="float:left; clear: both;" value="TOPIC" /><br><span>Enter Concept Name</span>
-
-			<input type="text" id="url_1" style="float:left; clear: both;" value="URL" />
-			<input type="text" id="title_1" style="float:left; " value="TITLE" />
-			<input type="text" id="teaser_1" style="float:left; " value="TEASER" />
-			<input type="text" id="citation_1" style="float:left; " value="CITATION" />
-
-			<br><br>
-
-			<input type="text" id="url_2" style="float:left; clear: both;" value="URL" />
-			<input type="text" id="title_2" style="float:left; " value="TITLE" />
-			<input type="text" id="teaser_2" style="float:left; " value="TEASER" />
-			<input type="text" id="citation_2" style="float:left; " value="CITATION" />
-
+			<div class="articleLabel" style="">Article 1</div><input type="text" id="url_1" style="float:left;" placeholder="URL" autocomplete="off"/>
+			<input type="text" id="title_1" placeholder="TITLE" autocomplete="off" />
+			<input type="text" id="teaser_1" placeholder="TEASER" autocomplete="off"/>
+			<input type="text" id="citation_1" placeholder="CITATION" autocomplete="off"/>
 
 			<br><br>
 
-
-			<input type="text" id="url_3" style="float:left; clear: both;" value="URL" />
-			<input type="text" id="title_3" style="float:left; " value="TITLE" />
-			<input type="text" id="teaser_3" style="float:left; " value="TEASER" />
-			<input type="text" id="citation_3" style="float:left; " value="CITATION" />
-
-
-			<br><br>
-
-			<input type="text" id="url_4" style="float:left; clear: both;" value="URL" />
-			<input type="text" id="title_4" style="float:left; " value="TITLE" />
-			<input type="text" id="teaser_4" style="float:left; " value="TEASER" />
-			<input type="text" id="citation_4" style="float:left; " value="CITATION" />
-
-
-			<br><br>
-
-			<input type="text" id="url_5" style="float:left; clear: both;" value="URL" />
-			<input type="text" id="title_5" style="float:left; " value="TITLE" />
-			<input type="text" id="teaser_5" style="float:left; " value="TEASER" />
-			<input type="text" id="citation_5" style="float:left; " value="CITATION" />
+			<div class="articleLabel" style="">Article 2</div><input type="text" id="url_2" style="float:left;" placeholder="URL" autocomplete="off" />
+			<input type="text" id="title_2" placeholder="TITLE" autocomplete="off" />
+			<input type="text" id="teaser_2" placeholder="TEASER" autocomplete="off" />
+			<input type="text" id="citation_2" placeholder="CITATION" autocomplete="off" />
 
 
 			<br><br>
 
 
+			<div class="articleLabel" style="">Article 3</div><input type="text" id="url_3" style="float:left;" placeholder="URL" autocomplete="off" />
+			<input type="text" id="title_3" placeholder="TITLE" autocomplete="off" />
+			<input type="text" id="teaser_3" placeholder="TEASER" autocomplete="off" />
+			<input type="text" id="citation_3" placeholder="CITATION" autocomplete="off" />
 
-			<button type="button" id="submit_1" value="Submit" onclick="workCAE()" style="float:left; clear: both;">Submit</button>
-			<div id="text_1" style="float:left; clear: both; width:600px; height:100%; border: 1px solid #333333; background-color:#eeeeee; color:#000000; font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 25px; margin:20px 0; display:block; overflow:auto;"></div><br><br><br>
-			<button type="reset" value="Reset" onclick="eraseDiv()" style="float:left; clear: both;">Reset/Clear</button>
 
+			<br><br>
+
+			<div class="articleLabel" style="">Article 4</div><input type="text" id="url_4" style="float:left;" placeholder="URL" autocomplete="off" />
+			<input type="text" id="title_4" placeholder="TITLE" autocomplete="off"/>
+			<input type="text" id="teaser_4" placeholder="TEASER" autocomplete="off" />
+			<input type="text" id="citation_4" placeholder="CITATION" autocomplete="off" />
+
+
+			<br><br>
+
+			<div class="articleLabel" style="">Article 5</div><input type="text" id="url_5" style="float:left;" placeholder="URL" autocomplete="off" />
+			<input type="text" id="title_5" placeholder="TITLE" autocomplete="off" />
+			<input type="text" id="teaser_5" placeholder="TEASER" autocomplete="off" />
+			<input type="text" id="citation_5" placeholder="CITATION" autocomplete="off" />
+
+
+			<br><br>
+
+
+
+			<button type="button" id="submit_1" placeholder="Submit" onclick="workCAE()" style="float:left; clear: both;">Submit</button>
+			<div id="text_1" class="displayHTML"></div><br><br><br>
+			<button type="reset" placeholder="Reset" onclick="eraseDiv()" style="float:left; clear: both;">Reset/Clear</button>
+			
 	</section>
 
-
+</form>
 	<footer style="float:left; clear: both; margin-top: 20px;">
-		footer
+		Developed by Nicole Phillips. <a href="https://github.com/spialelo">GitHub</a>&nbsp;<a href="http://www.nicoledphillips.com">Website</a>
 	</footer>
 
 
