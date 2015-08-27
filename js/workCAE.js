@@ -1,20 +1,33 @@
+
+
 function workCAE () {
 
 var inputSpec = document.getElementById('specialty').value;
+inputSpec = Number(inputSpec);
+
 var topic = document.getElementById('topic').value;	
 
 
 var hdrSpec="";
  
+/*if(/^\d+$/.test(inputSpec) == 'false' ){
+        alert("Not a number.");
+    }*/
 
-switch(inputSpec) {
- case 2900: hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_rheu.gif"; 
+
+
+switch(inputSpec){
+ case 2900: 
+ hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_rheu.gif"; 
  break;
- case 1100:hdrSpec = "http://"; break;
- case 1300:hdrSpec = "http://"; break;
- case 1400: hdrSpec = "http://"; break;
- default: 
- hdrSpec = "http://generic"; 
+ case 1100:
+ hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_aimm.gif"; break;
+ case 1300:
+ hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_derm.gif"; break;
+ case 1400: 
+ hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_diab.gif"; break;
+default:
+hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_generic.gif"; break;
 }
 
 
@@ -64,7 +77,6 @@ document.getElementById('text_1').innerHTML = et_HTML;
 
 
 };
-
 
 
 
