@@ -68,8 +68,8 @@ var et_HTML ="&lt;body bgcolor=\"#ffffff\" topmargin=\"0\" leftmargin=\"0\" marg
 var test_HTML;
 
 /*Make the display area expand with the content.*/
-document.getElementById('text_1').style.width = 'auto';
-document.getElementById('text_1').style.height = 'auto';
+document.getElementById('text_1').style.width = "auto";
+document.getElementById('text_1').style.height = "auto";
 
 /*HTML output will be displayed in the div.*/
 document.getElementById('text_1').innerHTML = et_HTML;
@@ -91,8 +91,8 @@ document.getElementById('text_1').innerHTML = " ";
 document.getElementById('caeOne_form').reset();	
 
 /*Reset the display area size to the original values.*/
-document.getElementById('text_1').style.width = '600px';
-document.getElementById('text_1').style.height = '400px';
+document.getElementById('text_1').style.width = "600px";
+document.getElementById('text_1').style.height = "400px";
 
 };
 
