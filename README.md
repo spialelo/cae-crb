@@ -13,4 +13,10 @@ To find a way to speed up the production of the CAE HTML emails. Ads will have t
 -------------------
 
 20150826
-Input and display of HTML are working. Will work on the style and a few other tweaks.
+
+Input and display of HTML are working.
+
+20150827
+
+Switch case developed to pull in the header image. v. 1.0 of the tool is done. 
+
