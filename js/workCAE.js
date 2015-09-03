@@ -1,179 +1,356 @@
+/**
+ * Created by NPhillips on 8/26/2015.
+ * Completed on 9/3/2015.
+ */
 
 
-function workCAE () {
+(function(){
 
-var inputSpec = document.getElementById('specialty').value;
-//inputSpec = Number(inputSpec);
+/*radioAnswer is working */
+function radioAnswer () {
 
-var topic = document.getElementById('topic').value;	
+    /* Correctly alerted the value of the selected radio button.
+    alert(this.value); */
+    var userAnswer = this.value;
+    //alert(userAnswer);
+
+    var divAd = document.getElementById('revealAd');
+
+if(userAnswer == '300x250' || userAnswer == '300x600'){
+
+    divAd.style.visibility = 'visible';
+}
+
+    else
+    divAd.style.visibility = 'hidden';
 
 
-var hdrSpec="";
- 
-/*if(/^\d+$/.test(inputSpec) == 'false' ){
-        alert("Not a number.");
-    }*/
+
+    //divAd.innerText = 'Show selected value: ' + userAnswer;
+
+}
+
+    var radioButtons = document.getElementsByName('adAnswer');
+
+    for (var i = 0; i < radioButtons.length; i++){
+        radioButtons[i].onclick = radioAnswer;
+    }
+/*radioAnswer is working */
 
 
 
-    switch(inputSpec){
-        case '1000':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_aimm.gif";
-            break;
-        case '3320':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_anes.gif";
-            break;
-        case '1100':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_card.gif";
-            break;
-        case '1200':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_crit.gif";
-            break;
-        case '1300':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_derm.gif";
-            break;
-        case '1400':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_diab.gif";
-            break;
-        case '3310':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_emed.gif";
-            break;
-        case '2410':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_fmed.gif";
-            break;
-        case '1500':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_gast.gif";
-            break;
-        case '1600':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_onco.gif";
-            break;
-        case '1710':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_aids.gif";
-            break;
-        case '1720':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_infdis.gif";
-            break;
-        case '2420':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_imed.gif";
-            break;
-        case '1800':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_generic.gif";
-            break;
-        case '2421':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_neph.gif";
-            break;
-        case '1900':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_neur.gif";
-            break;
-        case '2000':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_obgy.gif";
-            break;
-        case '2100':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_opht.gif";
-            break;
-        case '2200':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_orth.gif";
-            break;
-        case '3300':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_generic.gif";
-            break;
-        case '1810':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_path.gif";
-            break;
-        case '2300':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_peds.gif";
-            break;
-        case '3400':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_plastic.gif";
-            break;
-        case '2500':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_publ.gif";
-            break;
-        case '2600':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_psyc.gif";
-            break;
-        case '2700':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_pulm.gif";
-            break;
-        case '2800':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_radi.gif";
-            break;
-        case '2900':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_rheu.gif";
-            break;
-        case '3000':
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_surg.gif";
-            break;
-        default:
-            hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_generic.gif";
-            break;
+/*pfizerAnswer is working */
+function pfizerAnswer () {
+
+        /* Correctly alerted the value of the selected radio button.
+         alert(this.value); */
+        var userAnswer = this.value;
+        //alert(userAnswer);
+
+    var divAd = document.getElementById('revealPfizer');
+
+    if(userAnswer == 'Yes'){
+
+        divAd.style.visibility = 'visible';
+    }
+
+    else
+        divAd.style.visibility = 'hidden';
+
+
+    //divAd.innerText = 'Show selected value: ' + userAnswer;
 
     }
 
+    var pfizerButtons = document.getElementsByName('pfizerAnswer');
+
+    for (var i = 0; i < pfizerButtons.length; i++){
+        pfizerButtons[i].onclick = pfizerAnswer;
+    }
+/*pfizerAnswer is working */
 
 
 
 
-var caeURL_1 = document.getElementById('url_1').value;
-var caeTITLE_1 = document.getElementById('title_1').value;
-var caeTEASER_1 = document.getElementById('teaser_1').value;
-var caeCITATION_1 = document.getElementById('citation_1').value;
-
-var caeURL_2 = document.getElementById('url_2').value;
-var caeTITLE_2 = document.getElementById('title_2').value;
-var caeTEASER_2 = document.getElementById('teaser_2').value;
-var caeCITATION_2 = document.getElementById('citation_2').value;
-
-var caeURL_3 = document.getElementById('url_3').value;
-var caeTITLE_3 = document.getElementById('title_3').value;
-var caeTEASER_3 = document.getElementById('teaser_3').value;
-var caeCITATION_3 = document.getElementById('citation_3').value;
-
-var caeURL_4 = document.getElementById('url_4').value;
-var caeTITLE_4 = document.getElementById('title_4').value;
-var caeTEASER_4 = document.getElementById('teaser_4').value;
-var caeCITATION_4 = document.getElementById('citation_4').value;
-
-var caeURL_5 = document.getElementById('url_5').value;
-var caeTITLE_5 = document.getElementById('title_5').value;
-var caeTEASER_5 = document.getElementById('teaser_5').value;
-var caeCITATION_5 = document.getElementById('citation_5').value;
 
 
+/*generateHTML function area is working */
 
+    function caeGenerate(){
 
-var et_HTML ="&lt;body bgcolor=\"#ffffff\" topmargin=\"0\" leftmargin=\"0\" marginheight=\"0\" marginwidth=\"0\" style=\"-webkit-font-smoothing: antialiased;width:100% !important;background:#ffffff;-webkit-text-size-adjust:none;\"&gt;&lt;table width=\"650\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" class=\"table\"&gt;&lt;tr&gt;&lt;td valign=\"top\"&gt;&lt;img style=\"display:block;\" height=\"15\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"&gt; &lt;\/td&gt;&lt;\/tr&gt;&lt;tr&gt;&lt;td height=\"5\" bgcolor=\"#006699\" style=\"font-size:1px; line-height:5px;\"&gt;&lt;img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;tr&gt; &lt;td&gt;&lt;table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"&gt;&lt;tr&gt; &lt;td width=\"5\" bgcolor=\"#006699\"&gt;&lt;img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"&gt;&lt;\/td&gt; &lt;td valign=\"top\"&gt;&lt;table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"&gt;&lt;tr&gt;&lt;td valign=\"top\"&gt; &lt;img src=\"" +hdrSpec+ "\" id=\"hdrImage\" class=\"header\" width=\"640\" height=\"55\" alt=\"\" style=\"display:block;\"&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;tr&gt;&lt;td height=\"10\"&gt;&lt;img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;tr&gt;&lt;td align=\"left\"&gt;&lt;table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"&gt; &lt;tr&gt;&lt;td width=\"30\" class=\"padding\"&gt;&nbsp;&lt;\/td&gt;&lt;td&gt;&lt;table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:14px;\"&gt;&lt;tr&gt;&lt;td height=\"20\" class=\"hide\"&gt;&lt;img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"&gt;&lt;\/td&gt; &lt;\/tr&gt;&lt;tr&gt;&lt;td align=\"left\" style=\"font-size:10px;\"&gt;&lt;!--MAIN ARTICLES BEGIN--&gt;&lt;font style=\"font-size:18px; font-weight:bold;\" class=\"headertext\"&gt;Top Articles on " + topic + "&lt;\/font&gt;&lt;table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"&gt;&lt;tr&gt;&lt;td height=\"10\"&gt;&lt;img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;\/table&gt;&lt;table border=\"0\" align=\"right\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:51%;\" class=\"hide\"&gt; &lt;tr&gt;&lt;td height=\"10\" align=\"center\" valign=\"bottom\" class=\"hide\"&gt;&lt;img height=\"7\" src=\"http:\/\/a1977.g.akamai.net\/f\/1977\/1448\/1d\/webmd.download.akamai.com\/1448\/headers_footers_new\/text_advertisement_top.gif\" width=\"77\" border=\"0\"&gt;&lt;\/td&gt;&lt;\/tr&gt; &lt;tr&gt;&lt;td&gt;&lt;table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"&gt; &lt;tr&gt;&lt;td width=\"10\"&gt;&lt;img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"10\" border=\"0\" alt=\"\"&gt;&lt;\/td&gt;&lt;td&gt;&lt;table width=\"300\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"&gt;&lt;tr&gt; &lt;td valign=\"top\"&gt;&lt;a target=\"new\" href=\"http:\/\/ad.doubleclick.net\/ddm\/clk\/287063890;114033321;w\"&gt;&lt;img src=\"http:\/\/img.medscapestatic.com\/pi\/features\/newsletters\/crb\/FM_MGMT_BANNERS_300X250_Static_C06_b_r.jpg\" alt=\"\" width=\"300\" height=\"250\" border=\"0\" align=\"right\"&gt;&lt;\/a&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;tr&gt; &lt;td height=\"15\"&gt;&lt;img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"&gt;&lt;\/td&gt;&lt;\/tr&gt; &lt;\/table&gt;&lt;\/td&gt; &lt;\/tr&gt;&lt;\/table&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;\/table&gt;&lt;a href=\"" + caeURL_1 + "\?src=nl_crb&uac=%%UAC%%&impID=%%JobID%%&faf=1\" style=\"color:#006699; font-size:14px; font-weight:bold; text-decoration:none;\" class=\"link\"&gt;" + caeTITLE_1 + "&lt;\/a&gt;&lt;br\/&gt;&lt;br\/&gt;&lt;font class=\"teaser\" style=\"font-size:14px; color:#666666;\"&gt;" + caeTEASER_1 + "&lt;\/font&gt;&lt;br\/&gt; &lt;font class=\"cite\" style=\"font-size:12px; color:#666666;\"&gt;&lt;em&gt;" + caeCITATION_1 + "&lt;\/em&gt;&lt;\/font&gt;&lt;br\/&gt;&lt;br\/&gt;\r\r&lt;a href=\"" + caeURL_2 + "\?src=nl_crb&uac=%%UAC%%&impID=%%JobID%%&faf=1\" style=\"color:#006699; font-size:14px; font-weight:bold; text-decoration:none;\" class=\"link\"&gt;" + caeTITLE_2 + "&lt;\/a&gt;&lt;br\/&gt;&lt;br\/&gt;&lt;font class=\"teaser\" style=\"font-size:14px; color:#666666;\"&gt;" + caeTEASER_2 + "&lt;\/font&gt;&lt;br\/&gt; &lt;font class=\"cite\" style=\"font-size:12px; color:#666666;\"&gt;&lt;em&gt;" + caeCITATION_2 + "&lt;\/em&gt;&lt;\/font&gt;&lt;br\/&gt;&lt;br\/&gt;\r\r&lt;a href=\"" + caeURL_3 + "\?src=nl_crb&uac=%%UAC%%&impID=%%JobID%%&faf=1\" style=\"color:#006699; font-size:14px; font-weight:bold; text-decoration:none;\" class=\"link\"&gt;" + caeTITLE_3 + "&lt;\/a&gt;&lt;br\/&gt;&lt;br\/&gt;&lt;font class=\"teaser\" style=\"font-size:14px; color:#666666;\"&gt;" + caeTEASER_3 + "&lt;\/font&gt;&lt;br\/&gt; &lt;font class=\"cite\" style=\"font-size:12px; color:#666666;\"&gt;&lt;em&gt;" + caeCITATION_3 + "&lt;\/em&gt;&lt;\/font&gt;&lt;br\/&gt;&lt;br\/&gt;\r\r&lt;a href=\"" + caeURL_4 + "\?src=nl_crb&uac=%%UAC%%&impID=%%JobID%%&faf=1\" style=\"color:#006699; font-size:14px; font-weight:bold; text-decoration:none;\" class=\"link\"&gt;" + caeTITLE_4 + "&lt;\/a&gt;&lt;br\/&gt;&lt;br\/&gt;&lt;font class=\"teaser\" style=\"font-size:14px; color:#666666;\"&gt;" + caeTEASER_4 + "&lt;\/font&gt;&lt;br\/&gt; &lt;font class=\"cite\" style=\"font-size:12px; color:#666666;\"&gt;&lt;em&gt;" + caeCITATION_4 + "&lt;\/em&gt;&lt;\/font&gt;&lt;br\/&gt;&lt;br\/&gt;\r\r&lt;a href=\"" + caeURL_5 + "\?src=nl_crb&uac=%%UAC%%&impID=%%JobID%%&faf=1\" style=\"color:#006699; font-size:14px; font-weight:bold; text-decoration:none;\" class=\"link\"&gt;" + caeTITLE_5 + "&lt;\/a&gt;&lt;br\/&gt;&lt;br\/&gt;&lt;font class=\"teaser\" style=\"font-size:14px; color:#666666;\"&gt;" + caeTEASER_5 + "&lt;\/font&gt;&lt;br\/&gt; &lt;font class=\"cite\" style=\"font-size:12px; color:#666666;\"&gt;&lt;em&gt;" + caeCITATION_5 + "&lt;\/em&gt;&lt;\/font&gt;&lt;br\/&gt;&lt;br\/&gt;&lt;table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:51%;\" class=\"table2\"&gt;&lt;tr&gt;&lt;td align=\"center\" valign=\"bottom\"&gt;&lt;img height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/features\/newsletters\/crb\/text_advertisement_top_mb.gif\" width=\"1\" border=\"0\" style=\"display:none;\" class=\"ad2\"&gt;&lt;\/td&gt;&lt;\/tr&gt; &lt;tr&gt;&lt;td&gt;&lt;table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"&gt; &lt;tr&gt;&lt;td width=\"10\"&gt;&lt;img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"10\" border=\"0\" alt=\"\"&gt;&lt;\/td&gt;&lt;td&gt;&lt;table width=\"300\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"&gt;&lt;tr&gt; &lt;td&gt;&lt;a target=\"new\" href=\"http:\/\/ad.doubleclick.net\/ddm\/clk\/287063890;114033321;w\"&gt;&lt;img width=\"1\" height=\"1\" border=\"0\" src=\"http:\/\/img.medscapestatic.com\/pi\/features\/newsletters\/crb\/FM_MGMT_BANNERS_300X250_Static_C06_b_r.jpg\" style=\"display:none;\" class=\"ad1\"&gt;&lt;\/a&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;tr&gt; &lt;td height=\"15\"&gt;&lt;img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;\/table&gt;&lt;\/td&gt; &lt;\/tr&gt;&lt;\/table&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;\/table&gt;&lt;!--MAIN ARTICLES END--&gt;&lt;\/td&gt; &lt;\/tr&gt;&lt;\/table&gt;&lt;\/td&gt;&lt;td width=\"30\" class=\"padding\"&gt;&nbsp;&lt;\/td&gt; &lt;\/tr&gt;&lt;\/table&gt;&lt;\/td&gt;&lt;\/tr&gt; &lt;tr&gt;&lt;td height=\"20\" class=\"hide\"&gt;&lt;img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;\/table&gt; &lt;\/td&gt; &lt;td width=\"5\" bgcolor=\"#006699\"&gt;&lt;img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"&gt;&lt;\/td&gt;&lt;\/tr&gt; &lt;\/table&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;tr&gt; &lt;td bgcolor=\"#0b476b\"&gt;&lt;img src=\"http:\/\/img.medscapestatic.com\/pi\/features\/newsletters\/crb\/template\/footer_crb.gif\" class=\"footer\" width=\"650\" height=\"25\" alt=\"\" style=\"display:block;\"&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;tr&gt;&lt;td height=\"20\"&gt;&lt;img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;tr&gt; &lt;td align=\"center\" valign=\"top\" class=\"footertext\" style=\" text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333;\"&gt;&lt;A href=\"https:\/\/profreg.medscape.com\/px\/forgotpassword.do\" style=\"text-decoration:none; color:#333333; font-size:12px;\" class=\"footertext\"&gt;Username and Password Assistance&lt;\/A&gt;&lt;font style=\"font-size:12px;\" class=\"footertext\"&gt;&nbsp;&nbsp;|&nbsp;&nbsp;&lt;\/font&gt;&lt;A href=\"http:\/\/www.medscape.com\/public\/help\" style=\"text-decoration:none; color:#333333; font-size:12px;\" class=\"footertext\"&gt; Medscape Member Support&lt;\/A&gt;&lt;font style=\"font-size:12px;\" class=\"footertext\"&gt;&nbsp;&nbsp;|&nbsp;&nbsp;&lt;\/font&gt;&lt;A href=\"http:\/\/www.medscape.com\/public\/privacy\" style=\"text-decoration:none; color:#333333; font-size:12px;\" class=\"footertext\"&gt;Privacy Policy&lt;\/A&gt; &lt;br&gt;&lt;br&gt;&lt;A href=\"https:\/\/profreg.medscape.com\/px\/optout.do\?serv=1&chan=13&info=%%EMAIL_ADDRESS%%&guid=%%ENCRYPTED_GUID%%&glob=0&prod=1013\" style=\"text-decoration:none; color:#333333;\"&gt;Unsubscribe from this newsletter&lt;\/A&gt;&nbsp;&nbsp;|&nbsp;&nbsp;&lt;A href=\"https:\/\/profreg.medscape.com\/px\/optout.do\?serv=1&chan=13&info=%%EMAIL_ADDRESS%%&guid=%%ENCRYPTED_GUID%%&glob=1&prod=1013\" style=\"text-decoration:none; color:#333333;\"&gt;Unsubscribe from all Medscape from WebMD newsletters&lt;\/A&gt; &lt;br&gt;&lt;br&gt; &lt;span class=\"applelinks\" style=\"color:#666666;\"&gt;You are receiving this communication because you are a registered member of Medscape.&lt;br&gt;The email address associated with your membership is &lt;A href=\"mailto:%%EMAIL_ADDRESS%%\" style=\"text-decoration:none; color: #666666; font-family:arial; font-size:11px;\" class=\"footertext\"&gt;%%EMAIL_ADDRESS%%&lt;\/A&gt;.&lt;br&gt;&lt;br&gt;Medscape from WebMD, 111 Eighth Avenue, New York, NY 10011&lt;\/span&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;tr&gt; &lt;td height=\"20\"&gt;&lt;img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"&gt;&lt;\/td&gt;&lt;\/tr&gt;&lt;\/table&gt;&lt;A HREF=\"http:\/\/ad.doubleclick.net\/jump\/N8276.329.MEDSCAPE\/B8431973.114033321;sz=1x1;ord=%%=Format(Now(), 'MMddyyyyhhmmss')=%%\?\"&gt;&lt;IMG SRC=\"http:\/\/ad.doubleclick.net\/ad\/N8276.329.MEDSCAPE\/B8431973.114033321;sz=1x1;ord=%%=Format(Now(), 'MMddyyyyhhmmss')=%%\?\" BORDER=0 WIDTH=\"1\" HEIGHT=\"1\"&gt;&lt;\/A&gt;&lt;custom name=\"opencounter\" type=\"tracking\"&gt;&lt;\/body&gt;";
+/*initializing the variable*/
+        var hdrSpec = "";
+
+        /*storing user input in variables*/
+        var inputURL = document.getElementById('text_url').value;
+        var inputTopic = document.getElementById('topic').value;
+        var inputTitle = document.getElementById('text_title').value;
+        var inputTeaser = document.getElementById('text_teaser').value;
+        var inputCitation = document.getElementById('text_cite').value;
+
+        var inputAdImage = document.getElementById('adImage').value;
+        var inputAdURL = document.getElementById('adURL').value;
+        var inputTrackPixImage = document.getElementById('trackPixImg').value;
+        var inputTrackPixURL = document.getElementById('trackPixURL').value;
+
+        /*split at tab works*/
+        var cleanURL = inputURL.replace(/\r\n|\r|\n/g, '$-$').split('$-$');
+        var cleanTopic = inputTopic.replace(/\r\n|\r|\n/g, '$-$').split('$-$');
+        var cleanTitle = inputTitle.replace(/\r\n|\r|\n/g, '$-$').split('$-$');
+        var cleanTeaser = inputTeaser.replace(/\r\n|\r|\n/g, '$-$').split('$-$');
+        var cleanCitation = inputCitation.replace(/\r\n|\r|\n/g, '$-$').split('$-$');
 
 
 
-/*Make the display area expand with the content.*/
-document.getElementById('text_1').style.width = "auto";
-document.getElementById('text_1').style.height = "auto";
+        var sel = document.getElementById('specDropDown');
+        var dropDownSelected = sel.options[sel.selectedIndex].value;
 
-/*HTML output will be displayed in the div.*/
-document.getElementById('text_1').innerHTML = et_HTML;
+        /*Test drop down is working
+         alert(dropDownSelected);
+         Input from drop down is a string
+         alert(typeof dropDownSelected === 'string')
+         */
+
+        switch(dropDownSelected){
+            case '1000':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_aimm.gif";
+                break;
+            case '3320':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_anes.gif";
+                break;
+            case '1100':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_card.gif";
+                break;
+            case '1200':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_crit.gif";
+                break;
+            case '1300':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_derm.gif";
+                break;
+            case '1400':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_diab.gif";
+                break;
+            case '3310':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_emed.gif";
+                break;
+            case '2410':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_fmed.gif";
+                break;
+            case '1500':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_gast.gif";
+                break;
+            case '1600':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_onco.gif";
+                break;
+            case '1710':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_aids.gif";
+                break;
+            case '1720':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_infdis.gif";
+                break;
+            case '2420':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_imed.gif";
+                break;
+            case '1800':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_generic.gif";
+                break;
+            case '2421':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_neph.gif";
+                break;
+            case '1900':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_neur.gif";
+                break;
+            case '2000':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_obgy.gif";
+                break;
+            case '2100':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_opht.gif";
+                break;
+            case '2200':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_orth.gif";
+                break;
+            case '3300':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_generic.gif";
+                break;
+            case '1810':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_path.gif";
+                break;
+            case '2300':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_peds.gif";
+                break;
+            case '3400':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_plastic.gif";
+                break;
+            case '2500':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_publ.gif";
+                break;
+            case '2600':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_psyc.gif";
+                break;
+            case '2700':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_pulm.gif";
+                break;
+            case '2800':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_radi.gif";
+                break;
+            case '2900':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_rheu.gif";
+                break;
+            case '3000':
+                hdrSpec = "http://img.medscapestatic.com/pi/features/newsletters/crb/template/hdr_crb_surg.gif";
+                break;
+
+
+        }
+
+
+        var adButtons = document.getElementsByName('adAnswer');
+        var caeAdImg = "";
+        var caeAdURL = "";
+        var adWidth = "";
+        var adHeight = "";
+        var adMobileClass = "";
+
+
+        var desktopAd = "";
+        var mobileAd = "";
+
+        for(var i = 0; i < adButtons.length; i++){
+
+
+            if(adButtons[i].checked){
 
 
 
-};
+                var adButtonsVal = adButtons[i].value;
+
+                /* must stay here */
+                caeAdImg = inputAdImage;
+                caeAdURL = inputAdURL;
+
+                /*
+                set ad image dimensions based on value selected - working
+                 */
+
+                switch(adButtonsVal){
+                    case '300x250':
+                        adWidth = "300";
+                        adHeight = "250";
+                        adMobileClass = "ad1";
+                        desktopAd = "\<table border=\"0\" align=\"right\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:51%;\" class=\"hide\"\>\<tr\>\<td height=\"10\" align=\"center\" valign=\"bottom\" class=\"hide\"\>\<img height=\"7\" src=\"http:\/\/a1977\.g\.akamai\.net\/f\/1977\/1448\/1d/webmd\.download\.akamai\.com\/1448\/headers_footers_new\/text_advertisement_top\.gif\" width=\"77\" border=\"0\"\>\<\/td\>\<\/tr\>\<tr\>\<td\>\<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"\>\<tr\>\<td width=\"10\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/global\/ornaments\/spacer\.gif\" width=\"10\" border=\"0\" alt=\"\"\>\</td\>\<td\>\<table width=\"300\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"\>\<tr\>\<td valign=\"top\"\>\<a target=\"new\" href=\"" + caeAdURL + "\"\>\<img src=\"" + caeAdImg + "\" alt=\"\" width=\"" + adWidth +"\" height=\""+ adHeight + "\" border=\"0\" align=\"right\"\>\<\/a\>\<\/td\>\<\/tr\>\<tr\>\<td height=\"15\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/global\/ornaments\/spacer\.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<\/tr\>\<\/table\>\<\/td\>\<\/tr\>\<\/table\>\<\/td\>\<\/tr\>\<\/table\>";
+                        mobileAd = "\<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:51%;\" class=\"table2\"\>\<tr\>\<td align=\"center\" valign=\"bottom\"\>\<img height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/features\/newsletters\/crb\/text_advertisement_top_mb\.gif\" width=\"1\" border=\"0\" style=\"display:none;\" class=\"ad2\"\>\<\/td\>\<\/tr\>\<tr\>\<td\>\<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"\>\<tr\>\<td width=\"10\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/global\/ornaments\/spacer\.gif\" width=\"10\" border=\"0\" alt=\"\"\>\<\/td\>\<td\>\<table width=\"300\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"\>\<tr\>\<td\>\<a target=\"new\" href=\"" + caeAdURL + "\"\>\<img width=\"1\" height=\"1\" border=\"0\" src=\"" + caeAdImg + "\" style=\"display:none;\" class=\"" + adMobileClass + "\"\>\<\/a\>\<\/td\>\<\/tr\>\<tr\>\<td height=\"15\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/global\/ornaments\/spacer\.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<\/tr\>\<\/table\>\<\/td\>\<\/tr\>\<\/table\>\<\/td\>\<\/tr\>\<\/table\>";
+                        break;
+                    case '300x600':
+                        adWidth = "300";
+                        adHeight = "600";
+                        adMobileClass = "ad3";
+                        desktopAd = "\<table border=\"0\" align=\"right\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:51%;\" class=\"hide\"\>\<tr\>\<td height=\"10\" align=\"center\" valign=\"bottom\" class=\"hide\"\>\<img height=\"7\" src=\"http:\/\/a1977\.g\.akamai\.net\/f\/1977\/1448\/1d/webmd\.download\.akamai\.com\/1448\/headers_footers_new\/text_advertisement_top\.gif\" width=\"77\" border=\"0\"\>\<\/td\>\<\/tr\>\<tr\>\<td\>\<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"\>\<tr\>\<td width=\"10\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/global\/ornaments\/spacer\.gif\" width=\"10\" border=\"0\" alt=\"\"\>\</td\>\<td\>\<table width=\"300\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"\>\<tr\>\<td valign=\"top\"\>\<a target=\"new\" href=\"" + caeAdURL + "\"\>\<img src=\"" + caeAdImg + "\" alt=\"\" width=\"" + adWidth +"\" height=\""+ adHeight + "\" border=\"0\" align=\"right\"\>\<\/a\>\<\/td\>\<\/tr\>\<tr\>\<td height=\"15\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/global\/ornaments\/spacer\.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<\/tr\>\<\/table\>\<\/td\>\<\/tr\>\<\/table\>\<\/td\>\<\/tr\>\<\/table\>";
+                        mobileAd = "\<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:51%;\" class=\"table2\"\>\<tr\>\<td align=\"center\" valign=\"bottom\"\>\<img height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/features\/newsletters\/crb\/text_advertisement_top_mb\.gif\" width=\"1\" border=\"0\" style=\"display:none;\" class=\"ad2\"\>\<\/td\>\<\/tr\>\<tr\>\<td\>\<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"\>\<tr\>\<td width=\"10\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/global\/ornaments\/spacer\.gif\" width=\"10\" border=\"0\" alt=\"\"\>\<\/td\>\<td\>\<table width=\"300\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"\>\<tr\>\<td\>\<a target=\"new\" href=\"" + caeAdURL + "\"\>\<img width=\"1\" height=\"1\" border=\"0\" src=\"" + caeAdImg + "\" style=\"display:none;\" class=\"" + adMobileClass + "\"\>\<\/a\>\<\/td\>\<\/tr\>\<tr\>\<td height=\"15\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/global\/ornaments\/spacer\.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<\/tr\>\<\/table\>\<\/td\>\<\/tr\>\<\/table\>\<\/td\>\<\/tr\>\<\/table\>";
+                        break;
+                    case 'NoAd':
+                        adWidth = "000";
+                        adHeight = "000";
+                        adMobileClass = "noclass";
+                        desktopAd = "";
+                        mobileAd = "";
+                        break;
+
+                }
+
+                //alert('Ad: ' + adButtonsVal + "," + caeAdImg + "," + caeAdURL);
 
 
 
-function eraseDiv() {
+            }
+
+        }
 
 
-/*Reset the display area to an empty square.*/
-document.getElementById('text_1').innerHTML = " ";
+        var pfizerButtons = document.getElementsByName('pfizerAnswer');
+        var pfizerTrackPix = "";
+        var pfizerTrackURL = "";
+
+        var pfizerPixel = "";
+
+        for(var j=0; j < pfizerButtons.length; j++){
 
 
-/*Reset form values.*/
-document.getElementById('caeOne_form').reset();	
+            if( (pfizerButtons[j].checked) && (pfizerButtons[j].value == 'Yes') ){
 
-/*Reset the display area size to the original values.*/
-document.getElementById('text_1').style.width = "600px";
-document.getElementById('text_1').style.height = "400px";
+                pfizerTrackPix = inputTrackPixImage;
+                pfizerTrackURL = inputTrackPixURL;
 
-};
+                pfizerPixel = "\<A HREF=\"" + pfizerTrackPix + "%%=Format(Now(), 'MMddyyyyhhmmss')=%%\?\"\>\<IMG SRC=\"" + pfizerTrackURL + "%%=Format(Now(), 'MMddyyyyhhmmss')=%%\?\" BORDER=0 WIDTH=\"1\" HEIGHT=\"1\"\>\<\/A\>";
 
-/*working input and display*/
+                //alert('Pixel: ' + pfizerButtons[j].value + "," + pfizerTrackPix + "," + pfizerTrackURL);
+
+            }
+
+            else if ( (pfizerButtons[j].checked) && (pfizerButtons[j].value == 'No') ) {
+                pfizerPixel = "";
+            }
+        }
+
+
+
+
+        document.getElementById('newSplit').textContent ="\<body bgcolor=\"#ffffff\" topmargin=\"0\" leftmargin=\"0\" marginheight=\"0\" marginwidth=\"0\" style=\"-webkit-font-smoothing: antialiased;width:100% \!important;background:#ffffff;-webkit-text-size-adjust:none;\"\>\<table width=\"650\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" class=\"table\"\>\<tr\>\<td valign=\"top\"\>\<img style=\"display:block;\" height=\"15\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/global\/ornaments\/spacer\.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<\/tr\>\<tr\>\<td height=\"5\" bgcolor=\"#006699\" style=\"font-size:1px; line-height:5px;\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/global\/ornaments\/spacer\.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<\/tr\>\<tr\>\<td\>\<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"\>\<tr\>\<td width=\"5\" bgcolor=\"#006699\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/global\/ornaments\/spacer\.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<td valign=\"top\"\>\<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"\>\<tr\>\<td valign=\"top\"\>\<img src=\"" +hdrSpec+ "\" id=\"hdrImage\" class=\"header\" width=\"640\" height=\"55\" alt=\"\" style=\"display:block;\"\>\<\/td\>\<\/tr\>\<tr\>\<td height=\"10\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/global\/ornaments\/spacer\.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<\/tr\>\<tr\>\<td align=\"left\"\>\<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"\>\<tr\>\<td width=\"30\" class=\"padding\"\>&nbsp;\<\/td\>\<td\>\<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"font-family:Arial, Helvetica, sans-serif; color:#000000; font-size:14px;\"\>\<tr\>\<td height=\"20\" class=\"hide\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img\.medscapestatic\.com\/pi\/global\/ornaments\/spacer\.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<\/tr\>\<tr\>\<td align=\"left\" style=\"font-size:10px;\"\>\<!--MAIN ARTICLES BEGIN--\>\<font style=\"font-size:18px; font-weight:bold;\" class=\"headertext\"\>Top Articles on " + cleanTopic + "\<\/font\>\<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\"\>\<tr\>\<td height=\"10\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<\/tr\>\<\/table\>"+ desktopAd + "\<a href=\"" + cleanURL[0] + "\?src=nl_crb&uac=%%UAC%%&impID=%%JobID%%&faf=1\" style=\"color:#006699; font-size:14px; font-weight:bold; text-decoration:none;\" class=\"link\"\>" + cleanTitle[0] + "\<\/a\>\<br\/\>\<font class=\"teaser\" style=\"font-size:14px; color:#666666;\"\>" + cleanTeaser[0] + "\<\/font\>\<br\/\>\<font class=\"cite\" style=\"font-size:12px; color:#666666;\"\>\<em\>" + cleanCitation[0] + "\<\/em\>\<\/font\>\<br\/\>\<br\/\>\<a href=\"" + cleanURL[1] + "\?src=nl_crb&uac=%%UAC%%&impID=%%JobID%%&faf=1\" style=\"color:#006699; font-size:14px; font-weight:bold; text-decoration:none;\" class=\"link\"\>" + cleanTitle[1] + "\<\/a\>\<br\/\>\<font class=\"teaser\" style=\"font-size:14px; color:#666666;\"\>" + cleanTeaser[1] + "\<\/font\>\<br\/\>\<font class=\"cite\" style=\"font-size:12px; color:#666666;\"\>\<em\>" + cleanCitation[1] + "\<\/em\>\<\/font\>\<br\/\>\<br\/\>\<a href=\"" + cleanURL[2] + "\?src=nl_crb&uac=%%UAC%%&impID=%%JobID%%&faf=1\" style=\"color:#006699; font-size:14px; font-weight:bold; text-decoration:none;\" class=\"link\"\>" + cleanTitle[2] + "\<\/a\>\<br\/\>\<font class=\"teaser\" style=\"font-size:14px; color:#666666;\"\>" + cleanTeaser[2] + "\<\/font\>\<br\/\>\<font class=\"cite\" style=\"font-size:12px; color:#666666;\"\>\<em\>" + cleanCitation[2] + "\<\/em\>\<\/font\>\<br\/\>\<br\/\>\<a href=\"" + cleanURL[3] + "\?src=nl_crb&uac=%%UAC%%&impID=%%JobID%%&faf=1\" style=\"color:#006699; font-size:14px; font-weight:bold; text-decoration:none;\" class=\"link\"\>" + cleanTitle[3] + "\<\/a\>\<br\/\>\<font class=\"teaser\" style=\"font-size:14px; color:#666666;\"\>" + cleanTeaser[3] + "\<\/font\>\<br\/\>\<font class=\"cite\" style=\"font-size:12px; color:#666666;\"\>\<em\>" + cleanCitation[3] + "\<\/em\>\<\/font\>\<br\/\>\<br\/\>\<a href=\"" + cleanURL[4] + "\?src=nl_crb&uac=%%UAC%%&impID=%%JobID%%&faf=1\" style=\"color:#006699; font-size:14px; font-weight:bold; text-decoration:none;\" class=\"link\"\>" + cleanTitle[4] + "\<\/a\>\<br\/\>\<font class=\"teaser\" style=\"font-size:14px; color:#666666;\"\>" + cleanTeaser[4] + "\<\/font\>\<br\/\>\<font class=\"cite\" style=\"font-size:12px; color:#666666;\"\>\<em\>" + cleanCitation[4] + "\<\/em\>\<\/font\>"+ mobileAd +"\<!--MAIN ARTICLES END--\>\<\/td\>\<\/tr\>\<\/table\>\<\/td\>\<td width=\"30\" class=\"padding\"\>&nbsp;\<\/td\>\<\/tr\>\<\/table\>\<\/td\>\<\/tr\>\<tr\>\<td height=\"20\" class=\"hide\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<\/tr\>\<\/table\>\<\/td\>\<td width=\"5\" bgcolor=\"#006699\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<\/tr\>\<\/table\>\<\/td\>\<\/tr\>\<tr\>\<td bgcolor=\"#0b476b\"\>\<img src=\"http:\/\/img.medscapestatic.com\/pi\/features\/newsletters\/crb\/template\/footer_crb.gif\" class=\"footer\" width=\"650\" height=\"25\" alt=\"\" style=\"display:block;\"\>\<\/td\>\<\/tr\>\<tr\>\<td height=\"20\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<\/tr\>\<tr\>\<td align=\"center\" valign=\"top\" class=\"footertext\" style=\" text-align:center; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#333333;\"\>\<A href=\"https:\/\/profreg.medscape.com\/px\/forgotpassword.do\" style=\"text-decoration:none; color:#333333; font-size:12px;\" class=\"footertext\"\>Username and Password Assistance\<\/A\>\<font style=\"font-size:12px;\" class=\"footertext\"\>&nbsp;&nbsp;|&nbsp;&nbsp;\<\/font\>\<A href=\"http:\/\/www.medscape.com\/public\/help\" style=\"text-decoration:none; color:#333333; font-size:12px;\" class=\"footertext\"\> Medscape Member Support\<\/A\>\<font style=\"font-size:12px;\" class=\"footertext\"\>&nbsp;&nbsp;|&nbsp;&nbsp;\<\/font\>\<A href=\"http:\/\/www.medscape.com\/public\/privacy\" style=\"text-decoration:none; color:#333333; font-size:12px;\" class=\"footertext\"\>Privacy Policy\<\/A\>\<br\>\<br\>\<A href=\"https:\/\/profreg.medscape.com\/px\/optout.do\?serv=1&chan=13&info=%%EMAIL_ADDRESS%%&guid=%%ENCRYPTED_GUID%%&glob=0&prod=1013\" style=\"text-decoration:none; color:#333333;\"\>Unsubscribe from this newsletter\<\/A\>&nbsp;&nbsp;|&nbsp;&nbsp;\<A href=\"https:\/\/profreg.medscape.com\/px\/optout.do\?serv=1&chan=13&info=%%EMAIL_ADDRESS%%&guid=%%ENCRYPTED_GUID%%&glob=1&prod=1013\" style=\"text-decoration:none; color:#333333;\"\>Unsubscribe from all Medscape from WebMD newsletters\<\/A\>\<br\>\<br\>\<span class=\"applelinks\" style=\"color:#666666;\"\>You are receiving this communication because you are a registered member of Medscape.\<br\>The email address associated with your membership is \<A href=\"mailto:%%EMAIL_ADDRESS%%\" style=\"text-decoration:none; color: #666666; font-family:arial; font-size:11px;\" class=\"footertext\"\>%%EMAIL_ADDRESS%%\<\/A\>.\<br\>\<br\>Medscape from WebMD, 111 Eighth Avenue, New York, NY 10011\<\/span\>\<\/td\>\<\/tr\>\<tr\>\<td height=\"20\"\>\<img style=\"display:block;\" height=\"1\" src=\"http:\/\/img.medscapestatic.com\/pi\/global\/ornaments\/spacer.gif\" width=\"1\" border=\"0\" alt=\"\"\>\<\/td\>\<\/tr\>\<\/table\>"+ pfizerPixel + "\<custom name=\"opencounter\" type=\"tracking\"\>\<\/body\>";
+
+
+
+
+        document.getElementById('newSplit').style.width = 'auto';
+        document.getElementById('newSplit').style.height = 'auto';
+
+
+
+
+    }
+
+    var genButton = document.getElementById('generate');
+    genButton.onclick = caeGenerate;
+
+/*generateHTML function area is working*/
+
+
+
+/*eraseDiv is working */
+
+    function eraseDiv() {
+
+
+        var displayField = document.getElementById('newSplit');
+
+        /*Reset the display area to an empty square.*/
+        displayField.innerText = " ";
+
+        var divAd = document.getElementById('revealAd');
+        divAd.style.visibility = 'hidden';
+
+        var divPfizer = document.getElementById('revealPfizer');
+        divPfizer.style.visibility = 'hidden';
+
+        var form = document.getElementById('generateForm');
+
+        /*Reset form values.*/
+        form.reset();
+
+        /*Reset the display area size to the original values.*/
+        displayField.style.width = "600px";
+        displayField.style.height = "400px";
+
+    }
+
+    var resetButton = document.getElementById('resetButton');
+    resetButton.onclick = eraseDiv;
+
+/*eraseDiv is working */
+
+
+
+
+
+})();
+
+
 

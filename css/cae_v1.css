@@ -50,6 +50,12 @@ font-size: .8750em;
 padding: 25px; 
 margin:20px 0; 
 display:block; 
-overflow: hidden;
+overflow: scroll;
 
+}
+
+#displayAd, #displayTracking{
+	visibility: hidden;
+	float: left;
+	clear: both;
 }

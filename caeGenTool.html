@@ -1,97 +1,141 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
 <head>
+    <title>Condition Article Exclusivity v. 2.0</title>
 
-	<title>Condition Article Exclusivity Generator v. 1.0</title>
-
-	<link rel="stylesheet" type="text/css" href="css/reset.css">
-	<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="css/cae_v1.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/cae_v1.css">
 
 </head>
+
+
+<html lang="en">
+
 <body>
 
 
+
 <main class="caeOne">
-	
-	<header class="caeOne_header" style="">
-		Condition Article Exclusivity v. 1.0
-	</header>
 
-<form id="caeOne_form">
-	<section style="float:left; clear: both; height:100%; padding-top:20px;">
-		
-		<div style="float: left; clear: both; margin-right:10px;">Enter Parent/Child Spec number</div> <input type="text" id="specialty" placeholder="SPECIALTY" autocomplete="off"/> 
+    <!--<input id="text_1" type="text" style="float: left; clear:both;" />-->
 
-		<div style="float: left; clear: both; margin-right:10px;">Enter Concept Name</div> <input type="text" id="topic" style="float:left;" placeholder="TOPIC" autocomplete="off" />
-
-			<div class="articleLabel" style="">Article 1</div><input type="text" id="url_1" style="float:left;" placeholder="URL" autocomplete="off"/>
-			<input type="text" id="title_1" placeholder="TITLE" autocomplete="off" />
-			<input type="text" id="teaser_1" placeholder="TEASER" autocomplete="off"/>
-			<input type="text" id="citation_1" placeholder="CITATION" autocomplete="off"/>
-
-			<br><br>
-
-			<div class="articleLabel" style="">Article 2</div><input type="text" id="url_2" style="float:left;" placeholder="URL" autocomplete="off" />
-			<input type="text" id="title_2" placeholder="TITLE" autocomplete="off" />
-			<input type="text" id="teaser_2" placeholder="TEASER" autocomplete="off" />
-			<input type="text" id="citation_2" placeholder="CITATION" autocomplete="off" />
-
-
-			<br><br>
-
-
-			<div class="articleLabel" style="">Article 3</div><input type="text" id="url_3" style="float:left;" placeholder="URL" autocomplete="off" />
-			<input type="text" id="title_3" placeholder="TITLE" autocomplete="off" />
-			<input type="text" id="teaser_3" placeholder="TEASER" autocomplete="off" />
-			<input type="text" id="citation_3" placeholder="CITATION" autocomplete="off" />
-
-
-			<br><br>
-
-			<div class="articleLabel" style="">Article 4</div><input type="text" id="url_4" style="float:left;" placeholder="URL" autocomplete="off" />
-			<input type="text" id="title_4" placeholder="TITLE" autocomplete="off"/>
-			<input type="text" id="teaser_4" placeholder="TEASER" autocomplete="off" />
-			<input type="text" id="citation_4" placeholder="CITATION" autocomplete="off" />
-
-
-			<br><br>
-
-			<div class="articleLabel" style="">Article 5</div><input type="text" id="url_5" style="float:left;" placeholder="URL" autocomplete="off" />
-			<input type="text" id="title_5" placeholder="TITLE" autocomplete="off" />
-			<input type="text" id="teaser_5" placeholder="TEASER" autocomplete="off" />
-			<input type="text" id="citation_5" placeholder="CITATION" autocomplete="off" />
-
-
-			<br><br>
+    <header class="caeOne_header" style="">
+        Condition Article Exclusivity v. 2.0
+    </header>
 
 
 
-			<button type="button" id="submit_1" placeholder="Submit" onclick="workCAE()" style="float:left; clear: both;">Submit</button>
-			<div id="text_1" class="displayHTML"></div><br><br><br>
-			<button type="reset" placeholder="Reset" onclick="eraseDiv()" style="float:left; clear: both;">Reset/Clear</button>
-			
-	</section>
 
-</form>
-	<footer style="float:left; clear: both; margin-top: 20px;">
-		Developed by Nicole Phillips. <a href="https://github.com/spialelo">GitHub</a>&nbsp;<a href="http://www.nicoledphillips.com">Website</a>
-	</footer>
+    <form id="generateForm">
+
+        <section style="float:left; clear: both; height:100%; padding-top:20px;">
+
+            <div style="float: left; clear: both; margin-right:10px; margin-bottom: 25px;">Enter Parent/Child Spec number</div>
+            <select id="specDropDown">
+                <option value="1000">Allergy &amp; Clinical Immunology</option>
+                <option value="3320">Anesthesiology</option>
+                <option value="1100">Cardiology</option>
+                <option value="1200">Critical Care</option>
+                <option value="1300">Dermatology</option>
+                <option value="1400">Diabetes &amp; Endocrinology</option>
+                <option value="3310">Emergency Medicine</option>
+                <option value="2410">Family/General Medicine</option>
+                <option value="1500">Gastroenterology</option>
+                <option value="1600">Hematology/Oncology</option>
+                <option value="1710">HIV/AIDS</option>
+                <option value="1720">Infectious Diseases</option>
+                <option value="2420">Internal Medicine</option>
+                <option value="1800">Medical Genetics</option>
+                <option value="2421">Nephrology</option>
+                <option value="1900">Neurology</option>
+                <option value="2000">Obstetrics &amp; Gynecology</option>
+                <option value="2100">Ophthalmology</option>
+                <option value="2200">Orthopaedics</option>
+                <option value="3300">Other/Generic</option>
+                <option value="1810">Pathology</option>
+                <option value="2300">Pediatrics</option>
+                <option value="3400">Plastic Surgery</option>
+                <option value="2500">Public Health</option>
+                <option value="2600">Psychiatry</option>
+                <option value="2700">Pulmonology</option>
+                <option value="2800">Radiology</option>
+                <option value="2900">Rheumatology</option>
+                <option value="3000">Surgery</option>
+                <option value="3100">Transplantation</option>
+                <option value="3200">Urology</option>
+
+
+            </select>
+
+
+
+            <!--<input type="text" id="specialty" placeholder="SPECIALTY" autocomplete="off"/>-->
+
+            <div style="float: left; clear: both; margin-right:10px;">Enter Concept/Topic Name</div> <input type="text" id="topic" style="float:left;" placeholder="TOPIC" autocomplete="off" />
+
+
+            <textarea id="text_url" name="textarea" rows="10" cols="50" style="float:left; clear:both; margin:25px;" placeholder="Paste URL rows here."></textarea>
+
+
+            <textarea id="text_title" name="textarea" rows="10" cols="50" style="float:left; clear:both; margin:25px;" placeholder="Paste TITLE rows here."></textarea>
+
+            <textarea id="text_teaser" name="textarea" rows="10" cols="50" style="float:left; clear:both; margin:25px;" placeholder="Paste TEASER rows here."></textarea>
+
+            <textarea id="text_cite" name="textarea" rows="10" cols="50" style="float:left; clear:both; margin:25px;" placeholder="Paste CITATION rows here."></textarea>
+
+
+            <div style="float: left; clear: both; margin-right:10px;">Is there an ad?<br>
+                <input type="radio" value="300x250" id="Ad300250" name="adAnswer" style="float: left; clear:both;"/>300x250<br>
+                <input type="radio" value="300x600" id="Ad300600" name="adAnswer" style="float: left; clear:both;"/>300x600<br>
+                <input type="radio" value="NoAd" id="noAd" name="adAnswer" style="float: left; clear:both;"/>No<br><br>
+
+                <div id = "revealAd" style="float: left; clear:both; visibility: hidden;">
+                    <input type="text" id="adImage" style="float:left;" placeholder="Ad Image Path" autocomplete="off" /><br>
+                    <input type="text" id="adURL" style="float:left;" placeholder="Ad URL" autocomplete="off" />
+                </div>
+            </div>
+
+
+
+            <div style="float: left; clear: both; margin-right:10px;">Is this a Pfizer product?
+                <br><input type="radio" value="Yes" id="yesPfiz" name="pfizerAnswer" style="float: left; clear:both;" />Yes <br> <input type="radio" value="No" id="noPfiz" name="pfizerAnswer" style="float: left; clear:both;"/>No
+
+                <div id = "revealPfizer" style="float: left; clear:both; visibility: hidden;">
+                    <input type="text" id="trackPixImg" style="float:left;" placeholder="Tracking Pixel Image" autocomplete="off" /><br>
+                    <input type="text" id="trackPixURL" style="float:left;" placeholder="Tracking Pixel URL" autocomplete="off" />
+
+                </div>
+            </div>
+
+
+
+            <button id="generate" value="Split!" type="button" style="float: left; clear:both; margin-left:25px;">Split!</button>
+
+            <div id="newSplit" class="displayHTML"></div>
+
+            <button type="reset" id="resetButton" placeholder="Reset" style="float:left; clear: both;">Reset/Clear</button>
+
+        </section>
+
+
+    </form>
+
+
+    <footer style="float:left; clear: both; margin-top: 20px;">
+        Developed by Nicole Phillips. <a href="https://github.com/spialelo">GitHub</a>&nbsp;<a href="http://www.nicoledphillips.com">Website</a>
+    </footer>
+
 
 
 </main>
 
 
 
-
-
-
-
-
-<!-- working input and display -->
-
-
-<script type="text/javascript" src="js/workCAE.js"> </script>
-
+<script src="js/workCAE.js"></script>
 </body>
+
+
+
+
 </html>
