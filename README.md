@@ -20,4 +20,4 @@ To find a way to speed up the production of the CAE HTML emails. Ads will have t
 
 20150903 - Completed 2nd version of tool, added to repo.
 
-20150904 - Reduced to one copy paste action. V. 3.0 done.
+20150904 - Reduced to one copy paste action. V. 2.1 done.
