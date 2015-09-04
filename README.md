@@ -19,3 +19,5 @@ To find a way to speed up the production of the CAE HTML emails. Ads will have t
 20150831 - Began working on a way to reduce the amount of copy/pasting the user has to do and made the header selection a drop down. This no longer requires the user to know the PSPEC or CSPEC values of the specialities. I also took into consideration of a possible ad or tracking pixel, that the email may have.
 
 20150903 - Completed 2nd version of tool, added to repo.
+
+20150904 - Reduced to one copy paste action. V. 3.0 done.
